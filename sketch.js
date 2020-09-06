@@ -15,7 +15,7 @@ function draw() {
 	
 	background(s*3, s*5, s*7);
   angle = s;
-  s+=0.01;
+  s+=0.005;
   stroke(255);
   textSize(70);
   text('Rabin Pun', 1000, 100);
