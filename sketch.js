@@ -3,28 +3,45 @@ var slider;
 
 function setup() {
   createCanvas(1370, 700);
-  slider = createSlider(0, TWO_PI, PI / 4, 0.01);
-  slider.position(10, 10);
-  slider.style('width', '600px',);
+  
+ 
+  t=50;
+  s=0;
 }
 
 function draw() {
-	r=slider.value()*10;
-	g=slider.value()*20;
-	b=slider.value()*30;
-	background(r, g, b);
-  angle = slider.value();
+  
+  
+	
+	background(s*3, s*5, s*7);
+  angle = s;
+  s+=0.05;
   stroke(255);
+  textSize(70);
+  text('Rabin Pun', 1000, 100);
+  
+  fill(t*10, t*20, t*30);
   translate(650, height);
  
-	 branch(250);
-  
+   branch(250);
+   if(t<255){
+    t+=10;
+   }
+   else if(t<5){
+    t=255;
+   }
+   else{
+     t=0;
+   }
+   
+   
 }
 
 function branch(len) {
   line(0, 0, 0, -len);
   translate(0, -len);
   if (len > 4) {
+    
     push();
     rotate(angle);
     branch(len * 0.67);
